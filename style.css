@@ -143,8 +143,8 @@
 }
 
 .logo img {
-    height: 10px; /* Adjust based on your logo size */
+    height: 60px; /* Adjust based on your logo size */
     width: auto;
-    max-width: 100px;
+    max-width: 200px;
     display: block;
 }
