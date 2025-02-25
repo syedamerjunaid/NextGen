@@ -10,28 +10,45 @@
 </head>
 <body>
 
-<header>
-    <nav class="navbar glassmorphism">
-        <div class="logo">
-            <img src="logo.png" alt="NextGenMuslims">
+    <header>
+        <nav class="navbar glassmorphism">
+            <div class="logo">
+                <img src="logo.png" alt="NextGenMuslims">
+            </div>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#library"><i class="fas fa-book"></i> Library</a></li>
+                    <li><a href="#programs"><i class="fas fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="#training"><i class="fas fa-chalkboard-teacher"></i> Training</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#donate" class="donate-button"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                </ul>         
+            </div>
+    
+            <div class="nav-buttons">
+                <button id="dark-mode-toggle">🌙 Dark Mode</button>
+            </div>
+        </nav>
+    
+        <!-- Mobile Slide-In Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#library">Library</a>
+            <a href="#programs">Programs</a>
+            <a href="#training">Training</a>
+            <a href="#contact">Contact</a>
+            <a href="#donate">Donate</a>
         </div>
-        <div class="menu-toggle">&#9776;</div>
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
-                <li><a href="#library"><i class="fas fa-book"></i> Library</a></li>
-                <li><a href="#programs"><i class="fas fa-graduation-cap"></i> Programs</a></li>
-                <li><a href="#training"><i class="fas fa-chalkboard-teacher"></i> Training</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                <li><a href="#donate" class="donate-button"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
-            </ul>         
-        </div>
-        <div class="nav-buttons">
-            <button id="dark-mode-toggle">🌙 Dark Mode</button>
-        </div>
-    </nav>
-</header>
+    </header>   
   
 <section id="hero" class="parallax">
     <div class="hero-content">
@@ -88,6 +105,8 @@
     <h2>Contact Us</h2>
     <p>Get in touch with us for more information.</p>
 </section>
-    
+
+<script src="script.js"></script>
+
 </body>
 </html>
