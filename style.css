@@ -141,3 +141,10 @@
 #dark-mode-toggle {
     display: none !important;
 }
+
+.logo img {
+    height: 60px; /* Adjust based on your logo size */
+    width: auto;
+    max-width: 200px;
+    display: block;
+}
