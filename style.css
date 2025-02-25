@@ -39,14 +39,26 @@
 
 .nav-links a {
     text-decoration: none;
-    color: rgb(155, 47, 47);
+    color: white;
     font-size: 18px;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     transition: color 0.3s ease-in-out;
+}
+
+.nav-links a i {
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
     color: #f39c12;
+}
+
+.nav-links a:hover i {
+    transform: scale(1.2);
 }
 
 /* Hero Section */
