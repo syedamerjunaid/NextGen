@@ -33,68 +33,43 @@
 
 .nav-links {
     list-style: none;
-    display: none; /* Hide menu links on desktop */
+    display: flex;
 }
 
-/* Dark Mode Toggle Button Styling */
-.dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+.nav-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
     color: white;
-    position: absolute;
-    right: 70px;
-    top: 20px;
-    z-index: 1100;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    padding: 10px 15px;
+}
+
+.nav-links a i {
+    font-size: 22px;
     transition: transform 0.3s ease-in-out;
 }
 
-.dark-mode-toggle:hover {
-    transform: scale(1.2);
+.nav-links a:hover {
+    color: #f39c12;
+    transform: scale(1.1);
 }
 
-/* Animated Dropdown Menu */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.95);
-    min-width: 200px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.dropdown-content a {
-    color: #333;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    transition: background 0.3s ease-in-out;
-}
-
-.dropdown-content a:hover {
-    background: #f39c12;
-    color: white;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+.nav-links a:hover i {
+    transform: rotate(10deg);
 }
 
 /* Slide-In Mobile Menu with Animation */
 .menu-toggle {
-    display: block;
+    display: none;
     font-size: 28px;
     color: white;
     cursor: pointer;
