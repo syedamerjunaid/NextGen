@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
 }
 
-/* Animated Navbar with Dropdown */
+/* Sticky Animated Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -21,12 +21,14 @@
     left: 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, height 0.3s ease-in-out;
+    height: 70px;
 }
 
 .navbar.scrolled {
     background: linear-gradient(90deg, #1e272e, #485460);
-    transform: translateY(-5px);
+    transform: translateY(0);
+    height: 60px;
 }
 
 .nav-links {
@@ -46,24 +48,26 @@
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 8px;
-    transition: color 0.3s ease-in-out;
+    gap: 10px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    padding: 10px 15px;
 }
 
 .nav-links a i {
-    font-size: 20px;
+    font-size: 22px;
     transition: transform 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
     color: #f39c12;
+    transform: scale(1.1);
 }
 
 .nav-links a:hover i {
-    transform: scale(1.2);
+    transform: rotate(10deg);
 }
 
-/* Dropdown Menu */
+/* Animated Dropdown Menu */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -72,12 +76,14 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background: rgba(255, 255, 255, 0.9);
-    min-width: 180px;
+    background: rgba(255, 255, 255, 0.95);
+    min-width: 200px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
-    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .dropdown-content a {
@@ -96,6 +102,7 @@
 .dropdown:hover .dropdown-content {
     display: block;
     opacity: 1;
+    transform: translateY(0);
 }
 
 /* Hero Section */
