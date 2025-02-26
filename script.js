@@ -169,15 +169,17 @@ function filterPrograms(category) {
     });
 }
 
+// Open the Registration Modal
 function openRegistration() {
     let modal = document.getElementById("registrationModal");
     if (modal) {
         modal.style.display = "flex";
     } else {
-        console.error("Registration modal not found");
+        console.error("Error: Registration modal not found.");
     }
 }
 
+// Close the Registration Modal
 function closeRegistration() {
     let modal = document.getElementById("registrationModal");
     if (modal) {
@@ -200,11 +202,12 @@ function submitRegistration() {
     closeRegistration();
 }
 
-// Close modal when clicking outside it
+// Close modal when clicking outside
 window.onclick = function(event) {
     let modal = document.getElementById("registrationModal");
     if (event.target === modal) {
         closeRegistration();
     }
 };
+
 
