@@ -385,32 +385,21 @@ textarea {
     background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 #pdfModal iframe {
     width: 80%;
     height: 80%;
     border: none;
-    background: white;
 }
 
 #closeModal {
     position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 30px;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
     color: white;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 15px;
-    border-radius: 50%;
-    transition: background 0.3s ease-in-out;
-}
-
-#closeModal:hover {
-    background: rgba(255, 255, 255, 0.5);
-    color: black;
 }
 
 /* Upload Form */
