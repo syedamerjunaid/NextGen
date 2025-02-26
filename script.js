@@ -170,11 +170,19 @@ function filterPrograms(category) {
 }
 
 function openRegistration() {
-    document.getElementById("registrationModal").style.display = "flex";
+    let modal = document.getElementById("registrationModal");
+    if (modal) {
+        modal.style.display = "flex";
+    } else {
+        console.error("Registration modal not found");
+    }
 }
 
 function closeRegistration() {
-    document.getElementById("registrationModal").style.display = "none";
+    let modal = document.getElementById("registrationModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
 }
 
 // Handle Registration Submission
@@ -191,3 +199,12 @@ function submitRegistration() {
     alert(`Successfully registered for ${program}!`);
     closeRegistration();
 }
+
+// Close modal when clicking outside it
+window.onclick = function(event) {
+    let modal = document.getElementById("registrationModal");
+    if (event.target === modal) {
+        closeRegistration();
+    }
+};
+
