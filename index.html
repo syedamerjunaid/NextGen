@@ -68,6 +68,28 @@
     <div class="container">
         <h2>Digital Library</h2>
         
+    <!-- Admin Upload Form -->
+    <div id="upload-section">
+        <h3>Upload a New Book</h3>
+        <input type="text" id="bookTitle" placeholder="Book Title" required>
+        <input type="text" id="bookCategory" placeholder="Category (education, leadership, technology)" required>
+        <input type="file" id="bookCover" accept="image/*" required>
+        <input type="file" id="bookPDF" accept="application/pdf" required>
+        <button onclick="uploadBook()">Upload</button>
+    </div>
+
+    <!-- Library Books -->
+    <div class="library-grid" id="libraryGrid">
+        <!-- Books will be dynamically added here -->
+    </div>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdfModal">
+        <span id="closeModal" onclick="closePDF()">✖</span>
+        <iframe id="pdfViewer" src=""></iframe>
+    </div>
+
+
         <!-- Category Filter -->
         <select id="categoryFilter" onchange="filterBooks()">
             <option value="all">All Categories</option>

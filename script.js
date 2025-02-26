@@ -114,3 +114,45 @@ function closePDF() {
     document.getElementById("pdfViewer").src = "";
 }
 
+// Fix PDFs opening in modal instead of downloading
+function openPDF(pdfUrl) {
+    let modal = document.getElementById("pdfModal");
+    let viewer = document.getElementById("pdfViewer");
+
+    viewer.src = pdfUrl;
+    modal.style.display = "flex";
+}
+
+function closePDF() {
+    document.getElementById("pdfModal").style.display = "none";
+    document.getElementById("pdfViewer").src = "";
+}
+
+// Book Upload Feature (Simulated Storage)
+function uploadBook() {
+    let title = document.getElementById("bookTitle").value;
+    let category = document.getElementById("bookCategory").value.toLowerCase();
+    let cover = document.getElementById("bookCover").files[0];
+    let pdf = document.getElementById("bookPDF").files[0];
+
+    if (!title || !category || !cover || !pdf) {
+        alert("All fields are required!");
+        return;
+    }
+
+    let reader = new FileReader();
+    reader.readAsDataURL(cover);
+    reader.onload = function (event) {
+        let bookHTML = `
+            <div class="book" data-title="${title}" data-category="${category}" onclick="openPDF('${URL.createObjectURL(pdf)}')">
+                <img src="${event.target.result}" alt="Book Cover">
+                <h3>${title}</h3>
+                <p>Category: ${category}</p>
+                <a href="${URL.createObjectURL(pdf)}" class="download-btn" download>Download PDF</a>
+            </div>
+        `;
+
+        document.getElementById("libraryGrid").innerHTML += bookHTML;
+        alert("Book uploaded successfully!");
+    };
+}

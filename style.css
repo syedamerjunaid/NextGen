@@ -402,3 +402,35 @@ textarea {
     cursor: pointer;
 }
 
+/* Upload Form */
+#upload-section {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+#upload-section input {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#upload-section button {
+    padding: 10px 20px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#upload-section button:hover {
+    background: #e67e22;
+}
+
