@@ -87,33 +87,6 @@ function searchBooks() {
     });
 }
 
-function openPDF(pdfUrl) {
-    let modal = document.getElementById("pdfModal");
-    let viewer = document.getElementById("pdfViewer");
-
-    viewer.src = pdfUrl;
-    modal.style.display = "flex";
-}
-
-function closePDF() {
-    document.getElementById("pdfModal").style.display = "none";
-    document.getElementById("pdfViewer").src = "";
-}
-
-function searchBooks() {
-    let input = document.getElementById("searchBar").value.toLowerCase();
-    let books = document.querySelectorAll(".book");
-
-    books.forEach(book => {
-        let title = book.getAttribute("data-title").toLowerCase();
-        if (title.includes(input)) {
-            book.style.display = "block";
-        } else {
-            book.style.display = "none";
-        }
-    });
-}
-
 function filterBooks() {
     let category = document.getElementById("categoryFilter").value;
     let books = document.querySelectorAll(".book");
@@ -127,3 +100,17 @@ function filterBooks() {
         }
     });
 }
+
+function openPDF(pdfUrl) {
+    let modal = document.getElementById("pdfModal");
+    let viewer = document.getElementById("pdfViewer");
+
+    viewer.src = pdfUrl;
+    modal.style.display = "flex";
+}
+
+function closePDF() {
+    document.getElementById("pdfModal").style.display = "none";
+    document.getElementById("pdfViewer").src = "";
+}
+
