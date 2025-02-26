@@ -56,3 +56,20 @@ document.querySelectorAll(".nav-links a").forEach(anchor => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const textElement = document.querySelector(".animated-text");
+    const text = "Empowering the Next Generation of Muslim Leaders";
+    let index = 0;
+
+    function typeText() {
+        if (index < text.length) {
+            textElement.innerHTML = text.substring(0, index + 1);
+            index++;
+            setTimeout(typeText, 100);
+        }
+    }
+
+    textElement.innerHTML = ""; // Clear initial text
+    typeText();
+});
+
