@@ -168,3 +168,26 @@ function filterPrograms(category) {
         }
     });
 }
+
+function openRegistration() {
+    document.getElementById("registrationModal").style.display = "flex";
+}
+
+function closeRegistration() {
+    document.getElementById("registrationModal").style.display = "none";
+}
+
+// Handle Registration Submission
+function submitRegistration() {
+    let name = document.getElementById("regName").value.trim();
+    let email = document.getElementById("regEmail").value.trim();
+    let program = document.getElementById("regProgram").value;
+
+    if (!name || !email || !program) {
+        alert("Please fill in all fields!");
+        return;
+    }
+
+    alert(`Successfully registered for ${program}!`);
+    closeRegistration();
+}

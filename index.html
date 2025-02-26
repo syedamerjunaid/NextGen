@@ -179,6 +179,24 @@
     </ul>
 </section>
 
+<!-- Registration Modal -->
+<div id="registrationModal">
+    <div class="modal-content">
+        <span id="closeModal" onclick="closeRegistration()">✖</span>
+        <h3>Register for a Program</h3>
+        <input type="text" id="regName" placeholder="Your Name" required>
+        <input type="email" id="regEmail" placeholder="Your Email" required>
+        <select id="regProgram">
+            <option value="" disabled selected>Select a Program</option>
+            <option value="Islamic Leadership">Islamic Leadership Workshop</option>
+            <option value="Tech & Faith">Tech & Faith Integration</option>
+            <option value="Community Outreach">Community Outreach</option>
+        </select>
+        <button class="btn" onclick="submitRegistration()">Submit</button>
+    </div>
+</div>
+
+
 <section id="training">
     <h2>Skill-Based Training</h2>
     <p>Short-term, practical workshops focused on leadership, technology, and governance.</p>
