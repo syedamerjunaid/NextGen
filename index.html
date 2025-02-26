@@ -129,6 +129,44 @@
 </div>
 
 <section id="programs">
+    <div class="container">
+        <h2>Our Programs</h2>
+        <p>Long-term structured initiatives focused on mentorship, education, and leadership development.</p>
+        <!-- Filter Buttons -->
+        <div class="program-filters">
+            <button onclick="filterPrograms('all')">All</button>
+            <button onclick="filterPrograms('upcoming')">Upcoming</button>
+            <button onclick="filterPrograms('ongoing')">Ongoing</button>
+            <button onclick="filterPrograms('completed')">Completed</button>
+        </div>
+
+        <!-- Program Cards -->
+        <div class="programs-grid">
+            <div class="program-card" data-category="upcoming">
+                <h3>Islamic Leadership Workshop</h3>
+                <p>Guiding the youth on ethical leadership and decision-making.</p>
+                <span class="status upcoming">Upcoming</span>
+                <a href="#" class="btn">Register Now</a>
+            </div>
+
+            <div class="program-card" data-category="ongoing">
+                <h3>Tech & Faith Integration</h3>
+                <p>Exploring modern technology’s role in Islamic education.</p>
+                <span class="status ongoing">Ongoing</span>
+                <a href="#" class="btn">Join Now</a>
+            </div>
+
+            <div class="program-card" data-category="completed">
+                <h3>Community Outreach</h3>
+                <p>Helping communities through volunteering and social initiatives.</p>
+                <span class="status completed">Completed</span>
+                <a href="#" class="btn disabled">View Report</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="programs">
     <h2>Our Programs</h2>
     <p>Long-term structured initiatives focused on mentorship, education, and leadership development.</p>
     <ul>

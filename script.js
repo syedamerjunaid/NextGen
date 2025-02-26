@@ -156,3 +156,15 @@ function uploadBook() {
         alert("Book uploaded successfully!");
     };
 }
+
+function filterPrograms(category) {
+    let programs = document.querySelectorAll(".program-card");
+
+    programs.forEach(program => {
+        if (category === "all" || program.getAttribute("data-category") === category) {
+            program.style.display = "block";
+        } else {
+            program.style.display = "none";
+        }
+    });
+}
