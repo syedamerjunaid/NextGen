@@ -70,30 +70,32 @@
         <input type="text" id="searchBar" placeholder="Search for books..." onkeyup="searchBooks()">
         
         <div class="library-grid">
-            <div class="book" data-title="The Power of Knowledge">
+            <div class="book" data-title="The Power of Knowledge" onclick="openPDF('pdfs/book1.pdf')">
                 <img src="images/book1.jpg" alt="Book 1">
                 <h3>The Power of Knowledge</h3>
                 <p>Explore the importance of education in shaping the future.</p>
-                <a href="#" class="btn">Read Now</a>
             </div>
 
-            <div class="book" data-title="Islamic Leadership">
+            <div class="book" data-title="Islamic Leadership" onclick="openPDF('pdfs/book2.pdf')">
                 <img src="images/book2.jpg" alt="Book 2">
                 <h3>Islamic Leadership</h3>
                 <p>Guidelines on ethical and effective leadership in Islam.</p>
-                <a href="#" class="btn">Read Now</a>
             </div>
 
-            <div class="book" data-title="Technology & Faith">
+            <div class="book" data-title="Technology & Faith" onclick="openPDF('pdfs/book3.pdf')">
                 <img src="images/book3.jpg" alt="Book 3">
                 <h3>Technology & Faith</h3>
                 <p>Understanding the role of technology in Islamic education.</p>
-                <a href="#" class="btn">Read Now</a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- PDF Viewer Modal -->
+<div id="pdfModal">
+    <span id="closeModal" onclick="closePDF()">✖</span>
+    <iframe id="pdfViewer" src=""></iframe>
+</div>
 
 <section id="programs">
     <h2>Our Programs</h2>

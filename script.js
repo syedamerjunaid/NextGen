@@ -87,3 +87,15 @@ function searchBooks() {
     });
 }
 
+function openPDF(pdfUrl) {
+    let modal = document.getElementById("pdfModal");
+    let viewer = document.getElementById("pdfViewer");
+
+    viewer.src = pdfUrl;
+    modal.style.display = "flex";
+}
+
+function closePDF() {
+    document.getElementById("pdfModal").style.display = "none";
+    document.getElementById("pdfViewer").src = "";
+}
