@@ -99,3 +99,31 @@ function closePDF() {
     document.getElementById("pdfModal").style.display = "none";
     document.getElementById("pdfViewer").src = "";
 }
+
+function searchBooks() {
+    let input = document.getElementById("searchBar").value.toLowerCase();
+    let books = document.querySelectorAll(".book");
+
+    books.forEach(book => {
+        let title = book.getAttribute("data-title").toLowerCase();
+        if (title.includes(input)) {
+            book.style.display = "block";
+        } else {
+            book.style.display = "none";
+        }
+    });
+}
+
+function filterBooks() {
+    let category = document.getElementById("categoryFilter").value;
+    let books = document.querySelectorAll(".book");
+
+    books.forEach(book => {
+        let bookCategory = book.getAttribute("data-category");
+        if (category === "all" || bookCategory === category) {
+            book.style.display = "block";
+        } else {
+            book.style.display = "none";
+        }
+    });
+}

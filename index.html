@@ -67,25 +67,37 @@
 <section id="library">
     <div class="container">
         <h2>Digital Library</h2>
+        
+        <!-- Category Filter -->
+        <select id="categoryFilter" onchange="filterBooks()">
+            <option value="all">All Categories</option>
+            <option value="education">Education</option>
+            <option value="leadership">Leadership</option>
+            <option value="technology">Technology</option>
+        </select>
+
         <input type="text" id="searchBar" placeholder="Search for books..." onkeyup="searchBooks()">
         
         <div class="library-grid">
-            <div class="book" data-title="The Power of Knowledge" onclick="openPDF('pdfs/book1.pdf')">
+            <div class="book" data-title="The Power of Knowledge" data-category="education" onclick="openPDF('pdfs/book1.pdf')">
                 <img src="images/book1.jpg" alt="Book 1">
                 <h3>The Power of Knowledge</h3>
                 <p>Explore the importance of education in shaping the future.</p>
+                <a href="pdfs/book1.pdf" class="download-btn" download>Download PDF</a>
             </div>
 
-            <div class="book" data-title="Islamic Leadership" onclick="openPDF('pdfs/book2.pdf')">
+            <div class="book" data-title="Islamic Leadership" data-category="leadership" onclick="openPDF('pdfs/book2.pdf')">
                 <img src="images/book2.jpg" alt="Book 2">
                 <h3>Islamic Leadership</h3>
                 <p>Guidelines on ethical and effective leadership in Islam.</p>
+                <a href="pdfs/book2.pdf" class="download-btn" download>Download PDF</a>
             </div>
 
-            <div class="book" data-title="Technology & Faith" onclick="openPDF('pdfs/book3.pdf')">
+            <div class="book" data-title="Technology & Faith" data-category="technology" onclick="openPDF('pdfs/book3.pdf')">
                 <img src="images/book3.jpg" alt="Book 3">
                 <h3>Technology & Faith</h3>
                 <p>Understanding the role of technology in Islamic education.</p>
+                <a href="pdfs/book3.pdf" class="download-btn" download>Download PDF</a>
             </div>
         </div>
     </div>
