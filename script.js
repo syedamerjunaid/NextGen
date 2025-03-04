@@ -210,4 +210,51 @@ window.onclick = function(event) {
     }
 };
 
+const API_URL = "http://localhost:5000"; // Change this when deploying
+
+// 🔹 Register User
+document.getElementById("registerForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("regEmail").value;
+    const password = document.getElementById("regPassword").value;
+    const role = document.getElementById("userRole").value;
+
+    const response = await fetch(`${API_URL}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email, password, role })
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+        alert("✅ Registration successful! You can now log in.");
+    } else {
+        alert("❌ Error: " + data.error);
+    }
+});
+
+// 🔹 Login User
+document.getElementById("loginForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const response = await fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+        localStorage.setItem("token", data.token); // Save token in browser storage
+        alert("✅ Login successful! Redirecting...");
+        window.location.href = "dashboard.html"; // Redirect user after login
+    } else {
+        alert("❌ Error: " + data.error);
+    }
+});
 

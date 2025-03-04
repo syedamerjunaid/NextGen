@@ -3,232 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextGen Muslims</title>
+    <title>NextGen Muslims - Empowering Future Leaders</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-
     <header>
         <nav class="navbar glassmorphism">
             <div class="logo">
-                <img src="logos/logo.webp" alt="NextGenMuslims Logo" loading="lazy">
+                <img src="logos/logo.webp" alt="NextGen Muslims Logo" loading="lazy">
             </div>
-            
-            <!-- Mobile Menu Toggle Button -->
             <div class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </div>
-    
             <div class="nav-container">
                 <ul class="nav-links">
-                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a href="#library"><i class="fas fa-book"></i> Library</a></li>
-                    <li><a href="#programs"><i class="fas fa-graduation-cap"></i> Programs</a></li>
-                    <li><a href="#training"><i class="fas fa-chalkboard-teacher"></i> Training</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li><a href="#donate" class="donate-button"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#library">Library</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#training">Training</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#mentorship">Mentorship</a></li>
+                    <li><a href="#forum">Forum</a></li>
+                    <li><a href="#donate" class="donate-button">Donate</a></li>
+                    <li><a href="#login" class="login-button">Login</a></li>
                 </ul>         
             </div>
-    
-            <div class="nav-buttons">
-                <button id="dark-mode-toggle">🌙 Dark Mode</button>
-            </div>
         </nav>
+    </header>
     
-        <!-- Mobile Slide-In Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#library">Library</a>
-            <a href="#programs">Programs</a>
-            <a href="#training">Training</a>
-            <a href="#contact">Contact</a>
-            <a href="#donate">Donate</a>
-        </div>
-    </header>   
-  
-    <section id="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="fade-in">Empowering the Next Generation of Muslim Leaders</h1>
-            <p class="slide-up">Join a community that integrates faith, technology, and leadership.</p>
-            <a href="#about" class="btn scale-in">Learn More</a>
-            <a href="#join" class="btn btn-alt scale-in">Join Us</a>
+    <section id="login">
+        <div class="container">
+            <h2>User Login</h2>
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#register">Register here</a></p>
         </div>
     </section>
     
+    <section id="register">
+        <div class="container">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="text" id="username" placeholder="Full Name" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <select id="userRole">
+                    <option value="student">Student</option>
+                    <option value="mentor">Mentor</option>
+                    <option value="general">General User</option>
+                </select>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </section>
     
-<section id="library">
-    <div class="container">
-        <h2>Digital Library</h2>
-        
-    <!-- Admin Upload Form -->
-    <div id="upload-section">
-        <h3>Upload a New Book</h3>
-        <input type="text" id="bookTitle" placeholder="Book Title" required>
-        <input type="text" id="bookCategory" placeholder="Category (education, leadership, technology)" required>
-        <input type="file" id="bookCover" accept="image/*" required>
-        <input type="file" id="bookPDF" accept="application/pdf" required>
-        <button onclick="uploadBook()">Upload</button>
-    </div>
-
-    <!-- Library Books -->
-    <div class="library-grid" id="libraryGrid">
-        <!-- Books will be dynamically added here -->
-    </div>
-
-    <!-- PDF Viewer Modal -->
-    <div id="pdfModal">
-        <span id="closeModal" onclick="closePDF()">✖</span>
-        <iframe id="pdfViewer" src=""></iframe>
-    </div>
-
-
-        <!-- Category Filter -->
-        <select id="categoryFilter" onchange="filterBooks()">
-            <option value="all">All Categories</option>
-            <option value="education">Education</option>
-            <option value="leadership">Leadership</option>
-            <option value="technology">Technology</option>
-        </select>
-
-        <input type="text" id="searchBar" placeholder="Search for books..." onkeyup="searchBooks()">
-        
-        <div class="library-grid">
-            <div class="book" data-title="The Power of Knowledge" data-category="education" onclick="openPDF('pdfs/book1.pdf')">
-                <img src="images/book1.jpg" alt="Book 1">
-                <h3>The Power of Knowledge</h3>
-                <p>Explore the importance of education in shaping the future.</p>
-                <a href="pdfs/book1.pdf" class="download-btn" download>Download PDF</a>
-            </div>
-
-            <div class="book" data-title="Islamic Leadership" data-category="leadership" onclick="openPDF('pdfs/book2.pdf')">
-                <img src="images/book2.jpg" alt="Book 2">
-                <h3>Islamic Leadership</h3>
-                <p>Guidelines on ethical and effective leadership in Islam.</p>
-                <a href="pdfs/book2.pdf" class="download-btn" download>Download PDF</a>
-            </div>
-
-            <div class="book" data-title="Technology & Faith" data-category="technology" onclick="openPDF('pdfs/book3.pdf')">
-                <img src="images/book3.jpg" alt="Book 3">
-                <h3>Technology & Faith</h3>
-                <p>Understanding the role of technology in Islamic education.</p>
-                <a href="pdfs/book3.pdf" class="download-btn" download>Download PDF</a>
-            </div>
+    <section id="mentorship">
+        <div class="container">
+            <h2>Mentorship Program</h2>
+            <p>Register as a Mentor or Student and get matched based on skills and interests.</p>
+            <button class="btn">Become a Mentor</button>
+            <button class="btn btn-alt">Find a Mentor</button>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- PDF Viewer Modal -->
-<div id="pdfModal">
-    <span id="closeModal" onclick="closePDF()">✖</span>
-    <iframe id="pdfViewer" src=""></iframe>
-</div>
-
-<section id="programs">
-    <div class="container">
-        <h2>Our Programs</h2>
-        <p>Long-term structured initiatives focused on mentorship, education, and leadership development.</p>
-        <!-- Filter Buttons -->
-        <div class="program-filters">
-            <button onclick="filterPrograms('all')">All</button>
-            <button onclick="filterPrograms('upcoming')">Upcoming</button>
-            <button onclick="filterPrograms('ongoing')">Ongoing</button>
-            <button onclick="filterPrograms('completed')">Completed</button>
+    <section id="forum">
+        <div class="container">
+            <h2>Discussion Forum</h2>
+            <p>Join conversations on AI, Leadership, Islamic Studies, and more.</p>
+            <a href="#" class="btn">Join the Forum</a>
         </div>
-
-        <!-- Program Cards -->
-        <div class="programs-grid">
-            <div class="program-card" data-category="upcoming">
-                <h3>Islamic Leadership Workshop</h3>
-                <p>Guiding the youth on ethical leadership and decision-making.</p>
-                <span class="status upcoming">Upcoming</span>
-                <a href="#" class="btn">Register Now</a>
-            </div>
-
-            <div class="program-card" data-category="ongoing">
-                <h3>Tech & Faith Integration</h3>
-                <p>Exploring modern technology’s role in Islamic education.</p>
-                <span class="status ongoing">Ongoing</span>
-                <a href="#" class="btn">Join Now</a>
-            </div>
-
-            <div class="program-card" data-category="completed">
-                <h3>Community Outreach</h3>
-                <p>Helping communities through volunteering and social initiatives.</p>
-                <span class="status completed">Completed</span>
-                <a href="#" class="btn disabled">View Report</a>
-            </div>
+    </section>
+    
+    <section id="donate">
+        <div class="container">
+            <h2>Support Our Mission</h2>
+            <p>Your donation helps us provide education and leadership training to the next generation.</p>
+            <a href="#" class="btn">Donate Now</a>
         </div>
-    </div>
-</section>
-
-<section id="programs">
-    <h2>Our Programs</h2>
-    <p>Long-term structured initiatives focused on mentorship, education, and leadership development.</p>
-    <ul>
-        <li><strong>Mentorship Programs:</strong> Connecting students with industry professionals and scholars.</li>
-        <li><strong>Exchange Programs:</strong> Bridging the gap between Madrasa and school students.</li>
-        <li><strong>Technology & Innovation:</strong> Hands-on AI, Data Science, and Cybersecurity training.</li>
-        <li><strong>Community Development Initiatives:</strong> Volunteer programs and local engagement activities.</li>
-        <li><strong>Women’s Leadership Program:</strong> Empowering women with leadership and business skills.</li>
-        <li><strong>Islamic Governance & Policy Studies:</strong> Educating students on Islamic law and modern governance.</li>
-    </ul>
-</section>
-
-<!-- Registration Modal -->
-<div id="registrationModal">
-    <div class="modal-content">
-        <span id="closeModal" onclick="closeRegistration()">✖</span>
-        <h3>Register for a Program</h3>
-        <input type="text" id="regName" placeholder="Your Name" required>
-        <input type="email" id="regEmail" placeholder="Your Email" required>
-        <select id="regProgram">
-            <option value="" disabled selected>Select a Program</option>
-            <option value="Islamic Leadership">Islamic Leadership Workshop</option>
-            <option value="Tech & Faith">Tech & Faith Integration</option>
-            <option value="Community Outreach">Community Outreach</option>
-        </select>
-        <button class="btn" onclick="openRegistration()">Register Now</button>
-    </div>
-</div>
-
-
-<section id="training">
-    <h2>Skill-Based Training</h2>
-    <p>Short-term, practical workshops focused on leadership, technology, and governance.</p>
-    <ul>
-        <li><strong>Public Speaking & Debate:</strong> Enhancing confidence in communication and advocacy.</li>
-        <li><strong>Islamic Leadership & Governance:</strong> Training on governance principles and policy-making.</li>
-        <li><strong>Entrepreneurship & Finance:</strong> Business incubators and Islamic finance education.</li>
-        <li><strong>Cybersecurity & AI:</strong> Ethical AI use and cybersecurity fundamentals.</li>
-        <li><strong>Soft Skills & Career Development:</strong> Resume building, interview preparation, and career guidance.</li>
-        <li><strong>Conflict Resolution & Mediation:</strong> Teaching effective problem-solving strategies.</li>
-    </ul>
-</section>
-
-<section id="vision">
-    <h2>Our Vision</h2>
-    <p>We aim to create a progressive educational ecosystem where Muslim students from schools and Madrasas collaborate, learn, and develop leadership skills. By integrating traditional Islamic education with modern technology, AI, IT, and political awareness, we empower them to lead in technology, business, governance, and community development.</p>
-</section>
-
-<section id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us for more information.</p>
-        <form id="contactForm" action="https://formspree.io/f/xanqgznj" method="POST">
-            <input type="text" name="name" id="name" placeholder="Your Name" required>
-            <input type="email" name="email" id="email" placeholder="Your Email" required>
-            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>        
-    </div>
-</section>
-
-<script src="script.js"></script>
-
+    </section>
+    
+    <script src="script.js"></script>
 </body>
 </html>
